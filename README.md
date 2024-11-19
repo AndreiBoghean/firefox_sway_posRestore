@@ -1,6 +1,6 @@
-# Keep Firefox windows on their i3 workspaces
+# Keep Firefox windows on their ~~i3~~ sway workspaces
 
-Context: I am using [i3] and multiple Firefox windows across many workspaces,
+Context: I am using ~~[i3]~~ sway and multiple Firefox windows across many workspaces,
 and have Firefox automatically restore the previous session’s windows and tabs.
 
 [i3]: https://i3wm.org/
@@ -9,14 +9,14 @@ Issue: When I quit and restart Firefox, all the windows are dumped on the curren
 and I have to spend a minute sending each of them to where they belong.
 
 There is code in Firefox that attempts to restore each window to the desktop it was closed on,
-but this code does not work on i3 and specifically disabled.
+but this code does not work on ~~i3~~ sway and specifically disabled.
 
-There are general tools for i3 to restore window configuration,
+There are general tools for ~~i3~~ sway to restore window configuration,
 but it’s not easy to identify Firefox windows
 in order to swallow them to their respective workspaces.
 In particular, a Firefox window first opens with a generic `Mozilla Firefox` title,
 and changes that to the current tab’s title a few milliseconds later.
-This throws off the i3 swallowing logic.
+This throws off the ~~i3~~ sway swallowing logic.
 
 This script is tailored specifically for Firefox.
 It maintains a list of currently open Firefox windows and recently closed windows
@@ -35,5 +35,6 @@ The state is kept in `$XDG_STATE_HOME/i3firefox.json`
 # Installation
 
 `apt-get install python3-i3ipc`
+^ note: this package supports both i3 and wayland :D
 
-and arrange for this script to run on i3 startup.
+and arrange for this script to run on ~~i3~~ sway startup.
